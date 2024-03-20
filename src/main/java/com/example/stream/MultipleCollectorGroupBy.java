@@ -1,10 +1,47 @@
 package com.example.stream;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class MultipleCollectorGroupBy {
     public static void main(String[] args) {
+        List<Country> allCountries = getAllCountries();
+
+/*
+        Map<String, List<City>> map = allCountries.stream()
+                .collect(Collectors
+                        .groupingBy(Country::countryName, Collectors
+                                .flatMapping(country -> country.states().stream(), Collectors
+                                        .flatMapping(state -> state.cities().stream(), Collectors
+                                                .toList()))));
+*/
+
+/*
+            Map<String, List<State>> map = allCountries.stream()
+                .collect(Collectors
+                        .groupingBy(Country::countryName, Collectors
+                                .flatMapping(country -> country.states().stream(), Collectors.toList())));
+*/
+
+/*
+        Map<String, List<List<State>>> map = new HashMap<>();
+        allCountries.forEach(country -> {
+            List<State> states = country.states();
+            map.computeIfAbsent(country.countryName(), k -> new ArrayList<>()).add(states);
+        });*/
+
+        Map<String, Map<String, List<City>>> map = allCountries.stream()
+                .collect(Collectors.groupingBy(country -> country.countryName(), Collectors
+                        .flatMapping(country -> country.states().stream(), Collectors
+                                .groupingBy(state -> state.stateName(), Collectors
+                                        .flatMapping(o -> o.cities().stream(), Collectors
+                                                .toList())))));
+
+        printMap(map);
+    }
+
+    private static List<Country> getAllCountries() {
         //@formatter:off
         List<City> gujCities = List.of(
                 new City(1,"Ahmedabad"),
@@ -55,26 +92,7 @@ public class MultipleCollectorGroupBy {
                 new Country(2,"USA", usStates)
         );
         //@formatter:on
-/*        Map<String, List<City>> map = allCountries.stream()
-                .collect(Collectors
-                        .groupingBy(Country::countryName, Collectors
-                                .flatMapping(country -> country.states().stream(), Collectors
-                                        .flatMapping(state -> state.cities().stream(), Collectors
-                                                .toList()))));*/
-/*        Map<String, List<State>> map = allCountries.stream()
-                .collect(Collectors
-                        .groupingBy(Country::countryName, Collectors
-                                .flatMapping(country -> country.states().stream(), Collectors.toList())));*/
-
-/*        Map<String, List<List<State>>> map = new HashMap<>();
-        allCountries.forEach(country -> {
-            List<State> states = country.states();
-            map.computeIfAbsent(country.countryName(), k -> new ArrayList<>()).add(states);
-        });*/
-
-        Map<String, Map<String, List<City>>> map = allCountries.stream().collect(Collectors.groupingBy(country -> country.countryName(), Collectors.flatMapping(country -> country.states().stream(), Collectors.groupingBy(state -> state.stateName(), Collectors.flatMapping(o -> o.cities().stream(), Collectors.toList())))));
-
-        printMap(map);
+        return allCountries;
     }
 
     private static void printMap(Map<?, ?> map) {

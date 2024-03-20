@@ -1,12 +1,13 @@
 package com.example.stream;
 
-import java.util.*;
-import java.util.function.BinaryOperator;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-public class StreamException {
+public class StreamRuntimeExceptionHandling01 {
 
     public static void main(String[] args) {
 
@@ -16,10 +17,10 @@ public class StreamException {
 
     }
 
-    private static <K, V> Function<K, V> getFunction(Function<K, V> function) {
-        return K -> {
+    private static <R, T> Function<R, T> getFunction(Function<R, T> function) {
+        return R -> {
             try {
-                return function.apply(K);
+                return function.apply(R);
             } catch (NumberFormatException e) {
                 System.out.println("Exception :: " + e);
                 return null;
