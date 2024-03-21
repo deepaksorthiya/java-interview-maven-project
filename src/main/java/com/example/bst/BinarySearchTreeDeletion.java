@@ -13,6 +13,15 @@ public class BinarySearchTreeDeletion {
             key = item;
             left = right = null;
         }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "key=" + key +
+                    ", left=" + left +
+                    ", right=" + right +
+                    '}';
+        }
     }
 
     Node root;
@@ -109,16 +118,23 @@ public class BinarySearchTreeDeletion {
 
 		/* Let us create following BST
 				50
-			/	 \
-			30	 70
-			/ \ / \
-		20 40 60 80 */
+			  /	  \
+		    30	  70
+		    / \    / \
+		   20  40 60 80
+		         /   / \
+		        55  75  90
+		*/
         tree.root = tree.insert(tree.root, 50);
         tree.insert(tree.root, 30);
         tree.insert(tree.root, 20);
         tree.insert(tree.root, 40);
         tree.insert(tree.root, 70);
         tree.insert(tree.root, 60);
+        tree.insert(tree.root, 55);
+        tree.insert(tree.root, 80);
+        tree.insert(tree.root, 75);
+        tree.insert(tree.root, 90);
 
         System.out.print("Original BST: ");
         tree.inorder(tree.root);

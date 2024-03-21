@@ -3,7 +3,7 @@ package com.example.sortingalgos;
 // Java program for implementation of Heap Sort
 
 public class HeapSort {
-    public void sort(int arr[]) {
+    public void sort(int[] arr) {
         int N = arr.length;
 
         // Build heap (rearrange array)
@@ -25,7 +25,7 @@ public class HeapSort {
 
     // To heapify a subtree rooted with node i which is
     // an index in arr[]. n is size of heap
-    public void heapify(int arr[], int N, int i) {
+    public void heapify(int[] arr, int N, int i) {
         int largest = i; // Initialize largest as root
         int l = 2 * i + 1; // left = 2*i + 1
         int r = 2 * i + 2; // right = 2*i + 2
@@ -45,24 +45,22 @@ public class HeapSort {
             arr[i] = arr[largest];
             arr[largest] = swap;
 
-            // Recursively heapify the affected sub-tree
+            // Recursively heapify the affected subtree
             heapify(arr, N, largest);
         }
     }
 
     /* A utility function to print array of size n */
-    static void printArray(int arr[]) {
-        int N = arr.length;
-
-        for (int i = 0; i < N; ++i)
-            System.out.print(arr[i] + " ");
+    static void printArray(int[] arr) {
+        for (int j : arr) {
+            System.out.print(j + " ");
+        }
         System.out.println();
     }
 
     // Driver's code
-    public static void main(String args[]) {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-        int N = arr.length;
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
         System.out.println("Given array is");
         printArray(arr);
         // Function call
