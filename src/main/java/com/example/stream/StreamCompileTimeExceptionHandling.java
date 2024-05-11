@@ -14,6 +14,7 @@ public class StreamCompileTimeExceptionHandling {
 
     static void writeToFile(Integer integer) throws IOException {
         // logic to write to file which throws IOException
+        throw new IOException();
     }
 
     static <T, E extends Exception> Consumer<T> handlingConsumerWrapper(
@@ -26,7 +27,7 @@ public class StreamCompileTimeExceptionHandling {
                 try {
                     E exCast = exceptionClass.cast(ex);
                     System.err.println(
-                            "Exception occured : " + exCast.getMessage());
+                            "Exception occurred : " + exCast.getMessage());
                 } catch (ClassCastException ccEx) {
                     throw new RuntimeException(ex);
                 }

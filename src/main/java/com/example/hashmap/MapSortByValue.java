@@ -16,7 +16,7 @@ public class MapSortByValue {
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+                        (oldValue, _) -> oldValue, LinkedHashMap::new));
         printMap(sortedMap);
     }
 

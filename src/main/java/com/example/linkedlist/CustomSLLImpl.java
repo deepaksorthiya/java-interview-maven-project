@@ -2,8 +2,8 @@ package com.example.linkedlist;
 
 public class CustomSLLImpl {
 
-    private Node first;
-    private Node last;
+    public Node first;
+    public Node last;
 
     private static class Node {
         private final int data;
@@ -50,6 +50,7 @@ public class CustomSLLImpl {
             temp = temp.next;
         }
         System.out.print(" null ");
+        System.out.println();
     }
 
     public void reverseList() {
@@ -65,6 +66,22 @@ public class CustomSLLImpl {
         first = prev;
     }
 
+    public void reverseUsingRecursion() {
+        Node curr = first;
+        last = curr;
+        first = reverseUsingRecursionUtil(curr);
+    }
+
+    private Node reverseUsingRecursionUtil(Node first) {
+        if (first == null || first.next == null) {
+            return first;
+        }
+        Node rest = reverseUsingRecursionUtil(first.next);
+        first.next.next = first;
+        first.next = null;
+        return rest;
+    }
+
     public static void main(String[] args) {
 
         CustomSLLImpl ll = new CustomSLLImpl();
@@ -77,10 +94,16 @@ public class CustomSLLImpl {
 
 
         ll.printll();
-        System.out.println();
-        ll.reverseList();
-        System.out.println();
+        System.out.println("First :: " + ll.first);
+        System.out.println("Last :: " + ll.last);
+        ll.reverseUsingRecursion();
         ll.printll();
+        System.out.println("First :: " + ll.first);
+        System.out.println("Last :: " + ll.last);
+        ll.reverseList();
+        ll.printll();
+        System.out.println("First :: " + ll.first);
+        System.out.println("Last :: " + ll.last);
     }
 
 

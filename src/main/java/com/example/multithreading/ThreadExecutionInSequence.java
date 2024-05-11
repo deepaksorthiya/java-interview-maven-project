@@ -29,15 +29,11 @@ public class ThreadExecutionInSequence {
         System.out.println("Finished ..." + Thread.currentThread().getName());
     }
 
-    private static class Worker implements Runnable {
-        private final Thread thread;
-
-        public Worker(Thread thread) {
-            this.thread = thread;
-        }
+    private record Worker(Thread thread) implements Runnable {
 
         @Override
         public void run() {
+            System.out.println("Starting ..." + Thread.currentThread().getName());
             try {
                 if (thread != null) {
                     thread.join();
@@ -56,7 +52,7 @@ public class ThreadExecutionInSequence {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("Starting ..." + Thread.currentThread().getName());
+            //System.out.println("Starting ..." + Thread.currentThread().getName());
             try {
                 int min = 1000;
                 int max = 2000;

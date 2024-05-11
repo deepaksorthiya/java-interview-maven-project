@@ -4,7 +4,7 @@ public class OddEvenPrintMain {
 
     volatile boolean odd;
     int count = 1;
-    int MAX = 20;
+    int MAX = 10;
 
     public static void main(String[] args) {
 

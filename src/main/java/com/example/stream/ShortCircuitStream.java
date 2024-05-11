@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class JavaStream {
+public class ShortCircuitStream {
 
     public static void main(String[] args) {
         String[] arr = {"d2", "a2", "b1", "b3", "c"};

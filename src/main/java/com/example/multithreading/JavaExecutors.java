@@ -32,7 +32,7 @@ public class JavaExecutors {
 
     private static void doWork(int j) {
         String threadName = Thread.currentThread().getName();
-        //doSleep();
+        doSleep();
         System.out.println("Hello j = " + j + " " + threadName);
     }
 
