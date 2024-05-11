@@ -9,10 +9,10 @@ public class SolidDpExample {
         checkingAccount.withdraw(500);
         System.out.println(checkingAccount.getBalance());
 
-        TransactionManager checkingTransactionManaget = new TransactionManager(checkingAccount);
-        double checkingBalance = checkingTransactionManaget.checkBalance();
-        checkingTransactionManaget.performDeposit(1000);
-        checkingTransactionManaget.performWithdrawal(500);
+        TransactionManager checkingTransactionManager = new TransactionManager(checkingAccount);
+        double checkingBalance = checkingTransactionManager.checkBalance();
+        checkingTransactionManager.performDeposit(1000);
+        checkingTransactionManager.performWithdrawal(500);
         System.out.println(checkingBalance);
 
         Account savingsAccount = new SavingsAccount(logger);
