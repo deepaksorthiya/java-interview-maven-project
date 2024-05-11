@@ -1,77 +1,81 @@
 package com.example.arrayds;
 
 
-import java.util.Arrays;
-
 /**
  * Java Program to Count Number Of Inversions
  * <a href="https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/">GFG Link</a> </a>
  */
 public class CountNoOfArrayInversions {
 
-    // Function to count the number of inversions
-    // during the merge process
-    private static int mergeAndCount(int[] arr, int l,
-                                     int m, int r) {
-
-        // Left subarray
-        int[] left = Arrays.copyOfRange(arr, l, m + 1);
-
-        // Right subarray
-        int[] right = Arrays.copyOfRange(arr, m + 1, r + 1);
-
-        int i = 0, j = 0, k = l, swaps = 0;
-
-        while (i < left.length && j < right.length) {
-            if (left[i] <= right[j])
-                arr[k++] = left[i++];
-            else {
-                arr[k++] = right[j++];
-                swaps += (m + 1) - (l + i);
-            }
-        }
-        while (i < left.length)
-            arr[k++] = left[i++];
-        while (j < right.length)
-            arr[k++] = right[j++];
-        return swaps;
-    }
-
-    // Merge sort function
-    private static int mergeSortAndCount(int[] arr, int l,
-                                         int r) {
-
-        // Keeps track of the inversion count at a
-        // particular node of the recursion tree
-        int count = 0;
-
-        if (l < r) {
-            int m = (l + r) / 2;
-
-            // Total inversion count = left subarray count
-            // + right subarray count + merge count
-
-            // Left subarray count
-            count += mergeSortAndCount(arr, l, m);
-
-            // Right subarray count
-            count += mergeSortAndCount(arr, m + 1, r);
-
-            // Merge count
-            count += mergeAndCount(arr, l, m, r);
-        }
-
-        return count;
-    }
-
     // Driver code
     public static void main(String[] args) {
         int[] arr = {1, 20, 6, 4, 5};
+        int inversions = mergeSortAndCountInversions(arr, 0, arr.length - 1);
+        System.out.println("Number of inversions: " + inversions);
+    }
 
-        System.out.println(
-                mergeSortAndCount(arr, 0, arr.length - 1));
+    // Function to count the number of inversions
+    // during the merge process
+    public static int mergeSortAndCountInversions(int[] arr, int left, int right) {
+        int invCount = 0;
+        if (left < right) {
+            int mid = (left + right) / 2;
+            invCount += mergeSortAndCountInversions(arr, left, mid);
+            invCount += mergeSortAndCountInversions(arr, mid + 1, right);
+            invCount += merge(arr, left, mid, right);
+        }
+        return invCount;
+    }
+
+    public static int merge(int arr[], int left, int mid, int right) {
+        // Find sizes of two subarrays to be merged
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        int invCount = 0;
+
+        // Create temp arrays
+        int tempLeft[] = new int[n1];
+        int tempRight[] = new int[n2];
+
+        // Copy data to temp arrays
+        for (int i = 0; i < n1; ++i)
+            tempLeft[i] = arr[left + i];
+        for (int j = 0; j < n2; ++j)
+            tempRight[j] = arr[mid + 1 + j];
+
+        // Merge the temp arrays
+
+        // Initial indices of first and second subarrays
+        int i = 0, j = 0;
+
+        // Initial index of merged subarray array
+        int k = left;
+        while (i < n1 && j < n2) {
+            if (tempLeft[i] <= tempRight[j]) {
+                arr[k] = tempLeft[i];
+                i++;
+            } else {
+                arr[k] = tempRight[j];
+                j++;
+                invCount += (mid - i + 1); // Count inversions
+            }
+            k++;
+        }
+
+        // Copy remaining elements of L[] if any
+        while (i < n1) {
+            arr[k] = tempLeft[i];
+            i++;
+            k++;
+        }
+
+        // Copy remaining elements of R[] if any
+        while (j < n2) {
+            arr[k] = tempRight[j];
+            j++;
+            k++;
+        }
+        return invCount;
     }
 }
-
-// This code is contributed by Pradip Basak
 

@@ -1,8 +1,12 @@
+[![Java CI with Maven](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml)
+
 # Getting Started
+
 ## Requirements:
+
 ```
 Maven: 3.9+
-JDK: 22
+JDK: 23
 ```
 
 ### Clone this repository:
@@ -10,6 +14,7 @@ JDK: 22
 ```bash
 git clone https://github.com/deepaksorthiya/java-interview-maven-project.git
 ```
+
 ```bash
 cd java-interview-maven-project
 ```
@@ -19,3 +24,5 @@ cd java-interview-maven-project
 ```bash
 mvn clean test
 ```
+
+### Reference Documentation

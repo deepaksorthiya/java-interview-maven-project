@@ -28,12 +28,13 @@ public class GarbageCollectorTest {
         System.gc();
         //wait for gc to complete
         Thread.sleep(1000);
-        System.out.println("Count :: " + count);
+        System.out.println("Final Count :: " + count);
     }
 
     @Override
     protected void finalize() throws Throwable {
         count++;
         t = this;
+        System.out.println("Called finalize " + count);
     }
 }

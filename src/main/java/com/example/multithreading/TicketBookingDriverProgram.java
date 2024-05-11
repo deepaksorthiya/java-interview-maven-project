@@ -86,14 +86,14 @@ public class TicketBookingDriverProgram {
              */
             if (lockHoldCount == 0) {
                 lockHoldCount++;
-                threadId = Thread.currentThread().getId();
+                threadId = Thread.currentThread().threadId();
             }
             /*
              * If current thread already holds lock then hold count is increased by
              * 1 - Chain locking.
              */
             else if (lockHoldCount > 0
-                    && threadId == Thread.currentThread().getId()) {
+                    && threadId == Thread.currentThread().threadId()) {
                 lockHoldCount++;
             }
             // If the lock is held by another thread then the current
@@ -102,7 +102,7 @@ public class TicketBookingDriverProgram {
                 try {
                     wait();
                     lockHoldCount++;
-                    threadId = Thread.currentThread().getId();
+                    threadId = Thread.currentThread().threadId();
                 } catch (InterruptedException e) {
                     System.out.println("Interrupted");
                 }

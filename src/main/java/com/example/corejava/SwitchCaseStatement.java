@@ -1,6 +1,6 @@
 package com.example.corejava;
 
-public class JavaSwitchCase {
+public class SwitchCaseStatement {
 
     public static void main(String[] args) {
 
@@ -24,3 +24,4 @@ public class JavaSwitchCase {
         System.out.println(s);
     }
 }
+//output 100205040

@@ -19,8 +19,8 @@ public class ClassHierarchy {
     }
 
     public static void main(String[] args) {
-        Animal labrador = new Leopard();
-        printValue(labrador);
+        Animal animal = new Leopard();
+        printValue(animal);
     }
 
     static void printValue(Animal animal) {

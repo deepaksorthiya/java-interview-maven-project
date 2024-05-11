@@ -18,6 +18,13 @@ public class MultipleCollectorGroupBy {
 */
 
 /*
+            Map<String, List<City>> map = allCountries.stream().flatMap(country -> country.states.stream())
+        .collect(Collectors
+                .groupingBy(state -> state.stateName, Collectors.flatMapping(state ->state.cities.stream(), Collectors.toList())));
+*/
+
+
+/*
             Map<String, List<State>> map = allCountries.stream()
                 .collect(Collectors
                         .groupingBy(Country::countryName, Collectors

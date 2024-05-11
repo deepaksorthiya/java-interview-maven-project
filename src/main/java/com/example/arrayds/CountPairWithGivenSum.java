@@ -9,30 +9,41 @@ import java.util.HashMap;
  */
 public class CountPairWithGivenSum {
 
+    public static void main(String[] args) {
+        int arr[] = {1, 5, 7, -1, 5};
+        int n = arr.length;
+        int target = 6;
+        System.out.print("Count of pairs is "
+                + getPairsCount(arr, n, target));
+    }
+
     // Returns number of pairs in arr[0..n-1] with sum equal
     // to 'sum'
-    public static int getPairsCount(int arr[], int n, int k) {
-        HashMap<Integer, Integer> m = new HashMap<>();
+    public static int getPairsCount(int arr[], int n, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
         int count = 0;
-        for (int i = 0; i < n; i++) {
-            if (m.containsKey(k - arr[i])) {
-                count += m.get(k - arr[i]);
+
+        // Iterate through each element in the array
+        for (int num : arr) {
+            int complement = target - num;
+
+            // Check if the complement exists in the map
+            if (map.containsKey(complement)) {
+                count += map.get(complement);
+                System.out.println("Pair ::" + count + " ==> (" + complement + " , " + num + ")");
             }
-            if (m.containsKey(arr[i])) {
-                m.put(arr[i], m.get(arr[i]) + 1);
-            } else {
-                m.put(arr[i], 1);
-            }
+
+            // Update the count of the current element in
+            // the map
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
         return count;
     }
-
-    // Driver function to test the above function
-    public static void main(String[] args) {
-        int arr[] = {1, 3, 3, 0};
-        int n = arr.length;
-        int sum = 6;
-        System.out.print("Count of pairs is "
-                + getPairsCount(arr, n, sum));
-    }
 }
+/**
+ * OUTPUT
+ * Pair ::1 ==> (1 , 5)
+ * Pair ::2 ==> (7 , -1)
+ * Pair ::3 ==> (1 , 5)
+ * Count of pairs is 3
+ */
