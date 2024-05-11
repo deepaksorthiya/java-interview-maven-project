@@ -50,7 +50,7 @@ public class ThreadsExecutionInSequenceThreadPoolExecuters {
         public void run() {
             try {
                 lock.lock();
-                //System.out.println("Start Thread : " + Thread.currentThread().getName() + " ::  Thread ID : " + Thread.currentThread().getId());
+                System.out.println("Start Thread : " + Thread.currentThread().getName() + " ::  Thread ID : " + Thread.currentThread().threadId());
                 String tname = Thread.currentThread().getName();
                 tname = tname.replace("pool-1-thread-", "");
                 int tid = Integer.parseInt(tname);
@@ -64,7 +64,7 @@ public class ThreadsExecutionInSequenceThreadPoolExecuters {
                 //Thread.sleep(1000);
                 System.out.println("Thread Number : " + tid);
 
-                //System.out.println("Finished Thread : " + Thread.currentThread().getName() + " ::  Thread ID : " + Thread.currentThread().getId());
+                System.out.println("Finished Thread : " + Thread.currentThread().getName() + " ::  Thread ID : " + Thread.currentThread().threadId());
                 condition.signalAll();
 
             } catch (Exception e) {

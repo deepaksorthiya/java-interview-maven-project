@@ -2,6 +2,12 @@ package com.example.hashmap;
 
 import java.util.TreeSet;
 
+/**
+ * TreeSet internally user TreeMap
+ *
+ * @see TreeSet
+ * @see java.util.TreeMap
+ */
 public class TreeSetExample {
     public static void main(String[] args) {
         TreeSet<Integer> treeSet = new TreeSet<>();

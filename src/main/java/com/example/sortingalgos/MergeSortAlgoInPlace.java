@@ -2,7 +2,7 @@ package com.example.sortingalgos;
 
 /**
  * Java Program to Sort Array using in place merge sort
- * <a href="https://www.geeksforgeeks.org/in-place-merge-sort-set-2/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/in-place-merge-sort-set-2/">GFG Link</a>
  */
 public class MergeSortAlgoInPlace {
 

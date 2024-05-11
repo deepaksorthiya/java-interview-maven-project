@@ -8,15 +8,18 @@
     <packaging>jar</packaging>
 
     <name>java-interview-maven-project</name>
-    <url>http://maven.apache.org</url>
+    <url>https://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>22</java.version>
-        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <junit-bom.version>5.10.2</junit-bom.version>
-        <lombok.version>1.18.32</lombok.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>24</java.version>
+        <maven.surefire.plugin>3.5.3</maven.surefire.plugin>
+        <maven.compiler.plugin>3.14.0</maven.compiler.plugin>
+        <maven.source.plugin>3.3.1</maven.source.plugin>
+        <junit-bom.version>5.13.4</junit-bom.version>
+        <lombok.version>1.18.38</lombok.version>
+        <logback.version>1.5.18</logback.version>
     </properties>
 
     <dependencyManagement>
@@ -33,10 +36,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
-            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -52,15 +61,41 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
+                <version>${maven.compiler.plugin}</version>
                 <configuration>
                     <release>${java.version}</release>
                     <target>${java.version}</target>
+                    <compilerArgs>
+                        <!-- for scope value in jdk 24 -->
+                        <compilerArg>--enable-preview</compilerArg>
+                    </compilerArgs>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
+                <version>${maven.surefire.plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

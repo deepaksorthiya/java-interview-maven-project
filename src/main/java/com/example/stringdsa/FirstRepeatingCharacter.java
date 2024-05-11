@@ -8,10 +8,12 @@ public class FirstRepeatingCharacter {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
 
-            if (a[ch - 'a'] != 0)
+            int idx = ch - 'a';
+            if (a[idx] != 0) {
                 return Character.toString(ch);
-            else
-                a[ch - 'a']++;
+            } else {
+                a[idx]++;
+            }
         }
         return "-1";
     }

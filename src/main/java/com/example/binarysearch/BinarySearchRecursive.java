@@ -7,9 +7,9 @@ package com.example.binarysearch;
 public class BinarySearchRecursive {
 
     // Driver code
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         BinarySearchRecursive ob = new BinarySearchRecursive();
-        int arr[] = {2, 3, 4, 10, 40, 50, 60};
+        int[] arr = {2, 3, 4, 10, 40, 50, 60};
         int n = arr.length;
         int x = 40;
         int result = ob.binarySearch(arr, 0, n - 1, x);
@@ -23,7 +23,7 @@ public class BinarySearchRecursive {
 
     // Returns index of x if it is present in arr[l..
     // r], else return -1
-    int binarySearch(int arr[], int l, int r, int x) {
+    int binarySearch(int[] arr, int l, int r, int x) {
         if (r >= l) {
             int mid = l + (r - l) / 2;
 

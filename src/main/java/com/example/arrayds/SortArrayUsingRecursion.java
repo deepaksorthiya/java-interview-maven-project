@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class SortArrayUsingRecursion { // Main function call
     public static void main(String[] args) {
-        ArrayList arr = new ArrayList(
+        ArrayList<Integer> arr = new ArrayList<>(
                 Arrays.asList(5, 1, 0, 2)
         );
         arr = sort(arr);
@@ -14,7 +14,7 @@ public class SortArrayUsingRecursion { // Main function call
     }
 
     // Actual work start's from here
-    public static ArrayList sort(ArrayList<Integer> arr) { // sort function
+    public static ArrayList<Integer> sort(ArrayList<Integer> arr) { // sort function
         // Base Condition
         if (arr.size() == 1) {
             return arr;
@@ -28,7 +28,7 @@ public class SortArrayUsingRecursion { // Main function call
         return arr;
     }
 
-    public static ArrayList insert(ArrayList<Integer> arr, int temp) { // insert function
+    public static ArrayList<Integer> insert(ArrayList<Integer> arr, int temp) { // insert function
         // Base Condition
         if (arr.size() == 0 || temp >= arr.get(arr.size() - 1)) { // checking if let say we have 6 in temp & 6 is greater then 5
             arr.add(temp); // we will simply add it into our array

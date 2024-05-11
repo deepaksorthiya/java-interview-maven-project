@@ -7,10 +7,10 @@ public class ClassHierarchyConstructorOrder {
         public Parent() {
             System.out.println("I am parent class default() constructor.");
         }
-//
-//        public Parent(int j) {
-//            System.out.println("I am parent class constructor.");
-//        }
+
+        public Parent(int j) {
+            System.out.println("I am parent class Parent(int j) constructor.");
+        }
 
         public void print() {
             System.out.println("I am parent print()");
@@ -19,14 +19,12 @@ public class ClassHierarchyConstructorOrder {
 
 
     static class Child extends Parent {
-//        public Child() {
-//            super();
-//            System.out.println("I am child class constructor.");
-//        }
+        public Child() {
+            System.out.println("I am child class default() constructor.");
+        }
 
         public Child(int i) {
-            //super();
-            System.out.println("I am child class constructor.");
+            System.out.println("I am child class Child(int i) constructor.");
         }
 
         public void print() {
@@ -36,8 +34,14 @@ public class ClassHierarchyConstructorOrder {
 
     public static void main(String[] args) {
 
-        Parent p = new Child(1);
+        Child p = new Child(1);
         p.print();
 
     }
 }
+/**
+ output :
+ I am parent class default() constructor.
+ I am child class Child(int i) constructor.
+ I am child print()
+ */

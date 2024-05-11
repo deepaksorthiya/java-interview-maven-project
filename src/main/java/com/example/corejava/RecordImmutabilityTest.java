@@ -18,3 +18,7 @@ public class RecordImmutabilityTest {
     public record Address(String city, List<String> streets) {
     }
 }
+/**
+ * output :
+ [Street 1, Street 2]
+ */

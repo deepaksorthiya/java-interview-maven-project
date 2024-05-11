@@ -22,10 +22,10 @@ public class HashMapTest {
 
 
         Employee five = new Employee(1, "five");
-        int mapGet = map.get(five);
+        Integer mapGet = map.get(five);
         System.out.println(mapGet);
 
-        int removedEmp = map.remove(e5);
+        Integer removedEmp = map.remove(e5);
         System.out.println(removedEmp);
 
         for (Map.Entry<Employee, Integer> entry : map.entrySet()) {

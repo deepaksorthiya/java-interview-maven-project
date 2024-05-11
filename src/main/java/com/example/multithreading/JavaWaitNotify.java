@@ -15,9 +15,9 @@ public class JavaWaitNotify {
         Thread t1 = new Thread((() -> w.producer()));
         Thread t2 = new Thread((() -> w.consumer()));
 
-        t2.start();
-        Thread.sleep(3000);
         t1.start();
+        Thread.sleep(3000);
+        t2.start();
 
         t1.join();
         t2.join();
@@ -28,8 +28,8 @@ public class JavaWaitNotify {
 
     private static class Work {
 
-        ReentrantLock lock = new ReentrantLock();
-        Condition condition = lock.newCondition();
+        private final Lock lock = new ReentrantLock();
+        private final Condition condition = lock.newCondition();
 
         private volatile boolean flag;
 
