@@ -10,7 +10,8 @@ public class CountNoOfArrayInversions {
     // Driver code
     public static void main(String[] args) {
         int[] arr = {1, 20, 6, 4, 5};
-        System.out.println("Number of inversions: " + mergeSortAndCountInversions(arr, 0, arr.length - 1));
+        int inversions = mergeSortAndCountInversions(arr, 0, arr.length - 1);
+        System.out.println("Number of inversions: " + inversions);
     }
 
     // Function to count the number of inversions
@@ -26,21 +27,21 @@ public class CountNoOfArrayInversions {
         return invCount;
     }
 
-    public static int merge(int arr[], int l, int m, int r) {
+    public static int merge(int arr[], int left, int mid, int right) {
         // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
         int invCount = 0;
 
         // Create temp arrays
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int tempLeft[] = new int[n1];
+        int tempRight[] = new int[n2];
 
         // Copy data to temp arrays
         for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
+            tempLeft[i] = arr[left + i];
         for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
+            tempRight[j] = arr[mid + 1 + j];
 
         // Merge the temp arrays
 
@@ -48,29 +49,29 @@ public class CountNoOfArrayInversions {
         int i = 0, j = 0;
 
         // Initial index of merged subarray array
-        int k = l;
+        int k = left;
         while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
+            if (tempLeft[i] <= tempRight[j]) {
+                arr[k] = tempLeft[i];
                 i++;
             } else {
-                arr[k] = R[j];
+                arr[k] = tempRight[j];
                 j++;
-                invCount += (m - i + 1); // Count inversions
+                invCount += (mid - i + 1); // Count inversions
             }
             k++;
         }
 
         // Copy remaining elements of L[] if any
         while (i < n1) {
-            arr[k] = L[i];
+            arr[k] = tempLeft[i];
             i++;
             k++;
         }
 
         // Copy remaining elements of R[] if any
         while (j < n2) {
-            arr[k] = R[j];
+            arr[k] = tempRight[j];
             j++;
             k++;
         }
