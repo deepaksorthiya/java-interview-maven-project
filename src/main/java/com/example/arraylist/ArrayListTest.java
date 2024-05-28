@@ -20,6 +20,8 @@ public class ArrayListTest {
         list.add("two");
         list.add("three");
 
+
+
         list.remove("two");
 
         list.sort(null);
