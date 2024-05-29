@@ -29,12 +29,7 @@ public class ThreadExecutionInSequence {
         System.out.println("Finished ..." + Thread.currentThread().getName());
     }
 
-    private static class Worker implements Runnable {
-        private final Thread thread;
-
-        public Worker(Thread thread) {
-            this.thread = thread;
-        }
+    private record Worker(Thread thread) implements Runnable {
 
         @Override
         public void run() {
