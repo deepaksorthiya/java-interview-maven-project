@@ -18,6 +18,7 @@ public class Singleton implements Serializable, Cloneable {
         if (INSTANCE != null) {
             System.out.println("Instance already created. Throwing exception.");
             throw new InaccessibleObjectException();
+
         }
     }
 
@@ -35,10 +36,12 @@ public class Singleton implements Serializable, Cloneable {
         throw new CloneNotSupportedException();
     }
 
+    @Serial
     private Object readResolve() throws ObjectStreamException {
         return INSTANCE;
     }
 
+    @Serial
     private Object writeReplace() throws ObjectStreamException {
         return INSTANCE;
     }
@@ -46,14 +49,16 @@ public class Singleton implements Serializable, Cloneable {
     //Driver Code
     public static void main(String[] args) {
         checkSerialization();
-        checkReflection();
         checkClone();
+        checkReflection();
     }
 
     public static void checkSerialization() {
-        System.out.println("###############Serialization Check Start#######################");
+        System.out.println("###############Serialization Check Start#####################");
+        Singleton instance1 = null;
+        Singleton instance2 = null;
         try {
-            Singleton instance1 = Singleton.getInstance();
+            instance1 = Singleton.getInstance();
             ObjectOutput out = new ObjectOutputStream(
                     new FileOutputStream("file.text"));
             out.writeObject(instance1);
@@ -63,18 +68,33 @@ public class Singleton implements Serializable, Cloneable {
             ObjectInput in = new ObjectInputStream(
                     new FileInputStream("file.text"));
 
-            Singleton instance2
-                    = (Singleton) in.readObject();
+            instance2 = (Singleton) in.readObject();
             in.close();
-
-            System.out.println("instance1 hashCode:- "
-                    + instance1.hashCode());
-            System.out.println("instance2 hashCode:- "
-                    + instance2.hashCode());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("###############Serialization Check End#######################");
+        System.out.println("instance1.hashCode():- "
+                + instance1.hashCode());
+        System.out.println("instance2.hashCode():- "
+                + (instance2 != null ? instance2.hashCode() : "null"));
+        System.out.println("###############Serialization Check End#######################\n");
+    }
+
+    public static void checkClone() {
+        System.out.println("##################Clone Check Start##########################");
+        Singleton instance1 = null;
+        Singleton instance2 = null;
+        try {
+            instance1 = Singleton.getInstance();
+            instance2 = (Singleton) instance1.clone();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("instance1.hashCode():- "
+                + instance1.hashCode());
+        System.out.println("instance2.hashCode():- "
+                + (instance2 != null ? instance2.hashCode() : "null"));
+        System.out.println("##################Clone Check End###########################\n");
     }
 
     public static void checkReflection() {
@@ -100,23 +120,7 @@ public class Singleton implements Serializable, Cloneable {
                 + instance1.hashCode());
         System.out.println("instance2.hashCode():- "
                 + (instance2 != null ? instance2.hashCode() : "null"));
-        System.out.println("###############Serialization Check End#######################");
+        System.out.println("###############Reflection Check End#########################\n");
     }
 
-    public static void checkClone() {
-        System.out.println("###############Clone Check Start#######################");
-        try {
-            Singleton instance1 = Singleton.getInstance();
-
-            Singleton instance2 = (Singleton) instance1.clone();
-
-            System.out.println("instance1 hashCode:- "
-                    + instance1.hashCode());
-            System.out.println("instance2 hashCode:- "
-                    + instance2.hashCode());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        System.out.println("###############Clone Check Start#######################");
-    }
 }
