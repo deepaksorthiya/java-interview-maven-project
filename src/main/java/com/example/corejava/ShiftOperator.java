@@ -6,3 +6,6 @@ public class ShiftOperator {
         System.out.println(4 >> 1);
     }
 }
+//output
+//2
+//2
