@@ -9,11 +9,14 @@ public class MultiValueMapUsingHashMap {
     public static void main(String[] args) {
         Map<Integer, Set<String>> map = new HashMap<>();
 
-
-        map.computeIfAbsent(1, key -> new HashSet<>()).add("one");
-        map.computeIfAbsent(2, key -> new HashSet<>()).add("two");
-        map.computeIfAbsent(2, key -> new HashSet<>()).add("three");
+        put(map, 1, "one");
+        put(map, 2, "two");
+        put(map, 2, "three");
 
         System.out.println(map);
+    }
+
+    private static void put(Map<Integer, Set<String>> map, Integer key, String value) {
+        map.computeIfAbsent(key, _ -> new HashSet<>()).add(value);
     }
 }

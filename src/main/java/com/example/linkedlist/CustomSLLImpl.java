@@ -25,19 +25,25 @@ public class CustomSLLImpl {
 
     public void addFirst(int data) {
         Node f = first;
+        //create node and set it next as curr first
         Node newNode = new Node(data, f);
+        // if empty list
         if (f == null) {
             last = newNode;
         }
+        // set node as first
         first = newNode;
     }
 
     public void addLast(int data) {
+        //create node and set its next to null
         Node newNode = new Node(data, null);
+        //if list is empty
         if (first == null) {
             first = last = newNode;
             return;
         }
+        //set last node's next as newly created node
         Node l = last;
         l.next = newNode;
         last = newNode;

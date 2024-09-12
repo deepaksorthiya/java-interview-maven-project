@@ -19,3 +19,8 @@ cd java-interview-maven-project
 ```bash
 mvn clean test
 ```
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+1. * [Circular Dependency](https://www.javaguides.net/2019/01/handle-circular-dependencies-in-spring.html)

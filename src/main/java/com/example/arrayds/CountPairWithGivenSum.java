@@ -30,6 +30,7 @@ public class CountPairWithGivenSum {
             // Check if the complement exists in the map
             if (map.containsKey(complement)) {
                 count += map.get(complement);
+                System.out.println("Pair ::" + count + " ==> (" + complement + " , " + num + ")");
             }
 
             // Update the count of the current element in
@@ -39,3 +40,10 @@ public class CountPairWithGivenSum {
         return count;
     }
 }
+/**
+ * OUTPUT
+ * Pair ::1 ==> (1 , 5)
+ * Pair ::2 ==> (7 , -1)
+ * Pair ::3 ==> (1 , 5)
+ * Count of pairs is 3
+ */
