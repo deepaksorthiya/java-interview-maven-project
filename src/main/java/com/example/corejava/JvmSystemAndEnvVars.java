@@ -13,11 +13,11 @@ public class JvmSystemAndEnvVars {
         System.setProperty("AA", "AA");
         Map<String, String> envs = System.getenv();
 
-        envs.forEach((k, v) -> map.put("E -- " + k, v));
+        envs.forEach((k, v) -> map.put("ENV -- " + k, v));
 
 
         Properties props = System.getProperties();
-        props.forEach((k, v) -> map.put("S -- " + k.toString(), v.toString()));
+        props.forEach((k, v) -> map.put("SYS -- " + k.toString(), v.toString()));
 
         map.forEach((k, v) -> System.out.println(k + "=====>" + v));
 
