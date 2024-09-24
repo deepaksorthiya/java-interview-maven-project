@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class ClassPathProperties {
@@ -22,6 +23,7 @@ public class ClassPathProperties {
             //return new File(resource.getFile());
 
             File file = new File(resource.toURI());
+            System.out.println(Arrays.toString(file.listFiles()));
         }
 
         Properties properties = new Properties();
