@@ -49,6 +49,38 @@ public class CustomSLLImpl {
         last = newNode;
     }
 
+    public void removeFirst() {
+        if (first == null) {
+            return;
+        }
+        Node f = first;
+        Node next = f.next;
+
+        f.next = null; // help GC
+        first = next;
+        if (next == null) {
+            last = null;
+        }
+    }
+
+    public void removeLast(){
+        Node f = first;
+        // If the list is empty, return null
+        // If the list has only one node, delete it and
+        // return null
+        if (f == null || f.next == null) {
+            return;
+        }
+        // Find the second last node
+        Node secondLast = f;
+        while (secondLast.next.next != null) {
+            secondLast = secondLast.next;
+        }
+        // Delete the last node
+        last = secondLast;
+        secondLast.next = null;
+    }
+
     private void printll() {
         Node temp = first;
         while (temp != null) {
@@ -93,11 +125,12 @@ public class CustomSLLImpl {
         CustomSLLImpl ll = new CustomSLLImpl();
 
         ll.addLast(3);
+        ll.removeFirst();
         ll.addLast(4);
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(5);
-
+        ll.removeLast();
 
         ll.printll();
         System.out.println("First :: " + ll.first);

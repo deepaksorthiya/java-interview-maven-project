@@ -54,6 +54,30 @@ public class CustomDLLImpl {
         size++;
     }
 
+    public void removeFirst() {
+        Node f = first;
+        final Node next = f.next;
+        f.next = null; // help GC
+        first = next;
+        if (next == null)
+            last = null;
+        else
+            next.prev = null;
+        size--;
+    }
+
+    public void removeLast() {
+        Node l = last;
+        Node prev = l.prev;
+        l.prev = null; // help GC
+        last = prev;
+        if (prev == null)
+            first = null;
+        else
+            prev.next = null;
+        size--;
+    }
+
     private void printll() {
         Node temp = first;
         while (temp != null) {
@@ -65,11 +89,9 @@ public class CustomDLLImpl {
     }
 
     public void reverseList() {
-//        if (first == null || first.next == null) {
-//            return;
-//        }
 
         Node currNode = first;
+        last = currNode;
         Node prevNode = null;
 
         // Traverse the list and reverse the links
@@ -98,6 +120,8 @@ public class CustomDLLImpl {
         ll.addFirst(2);
         ll.addFirst(1);
         ll.addLast(5);
+        ll.removeLast();
+        ll.removeFirst();
 
 
         ll.printll();
