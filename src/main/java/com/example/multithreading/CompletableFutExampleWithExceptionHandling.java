@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class CompletableFutExample {
+public class CompletableFutExampleWithExceptionHandling {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         long start = System.currentTimeMillis();
         CompletableFuture<Integer> f1 = getFut();
@@ -30,17 +30,27 @@ public class CompletableFutExample {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName() + " FINISHED.");
                     int v = new Random().nextInt(10) + 1;
                     if (v < 5) {
                         throw new RuntimeException();
                     }
                     return v;
                 })
-                .handleAsync((v, t) -> {
-                    System.out.println("Exception===>" + t);
-                    System.out.println(v);
-                    return v;
+                .handleAsync((value, exception) -> {
+                    System.out.println("Value: " + value + " Exception: " + exception);
+                    System.out.println(Thread.currentThread().getName() + " FINISHED.");
+                    return value;
                 });
     }
 }
+
+/**
+ * OUTPUT
+ * Value: 10 Exception: null
+ * Value: null Exception: java.util.concurrent.CompletionException: java.lang.RuntimeException
+ * Value: null Exception: java.util.concurrent.CompletionException: java.lang.RuntimeException
+ * F1  = 10
+ * F2  = null
+ * F3  = null
+ * Time taken : 2030
+ */
