@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class JavaExecutors {
+public class ExecutorsServiceWithInterrupt {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
@@ -18,7 +18,7 @@ public class JavaExecutors {
         try {
             System.out.println("attempt to shutdown executor");
             executor.shutdown();
-            executor.awaitTermination(1, TimeUnit.DAYS);
+            executor.awaitTermination(10, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             System.err.println("tasks interrupted");
         } finally {
@@ -31,16 +31,19 @@ public class JavaExecutors {
     }
 
     private static void doWork(int j) {
-        String threadName = Thread.currentThread().getName();
-        doSleep();
-        System.out.println("Hello j = " + j + " " + threadName);
+        while (!Thread.currentThread().isInterrupted()){
+            String threadName = Thread.currentThread().getName();
+            doSleep();
+            System.out.println("Hello j = " + j + " " + threadName);
+        }
     }
 
     private static void doSleep() {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(Thread.currentThread().getName() + " Interrupted");
+            Thread.currentThread().interrupt();
         }
     }
 }

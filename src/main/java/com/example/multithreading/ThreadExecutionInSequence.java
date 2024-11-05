@@ -15,10 +15,13 @@ public class ThreadExecutionInSequence {
         Thread thread3 = new Thread(new Worker(thread2));
 
         thread3.start();
-        thread1.start();
-        thread0.start();
+        Thread.sleep(100);
         thread2.start();
-
+        Thread.sleep(100);
+        thread1.start();
+        Thread.sleep(100);
+        thread0.start();
+        Thread.sleep(100);
 
         thread0.join();
         thread1.join();
@@ -35,10 +38,17 @@ public class ThreadExecutionInSequence {
         public void run() {
             System.out.println("Starting ..." + Thread.currentThread().getName());
             try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            try {
                 if (thread != null) {
+                    System.out.println("Going to join  ..." + thread.getName());
+                    Thread.sleep(100);
                     thread.join();
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
