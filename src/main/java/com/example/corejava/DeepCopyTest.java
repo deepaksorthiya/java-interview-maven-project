@@ -16,7 +16,7 @@ public class DeepCopyTest {
         System.out.println(emp1.dept.designation); // Output : AVP
         // Changing the designation of 'emp2'
         emp2.dept.designation = "Director";
-        // This change will be reflected in original Employee 'emp1'
+        // This change will not be reflected in original Employee 'emp1'
         System.out.println(emp1.dept.designation); // Output : AVP
     }
 
