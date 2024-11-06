@@ -7,13 +7,13 @@ public class StaticMethodOverrideTest {
         p.print();
     }
 
-    static class Parent {
+    private static class Parent {
         public static void print() {
             System.out.println("I am parent print()");
         }
     }
 
-    static class Child extends Parent {
+    private static class Child extends Parent {
         public static void print() {
             System.out.println("I am child print()");
         }
