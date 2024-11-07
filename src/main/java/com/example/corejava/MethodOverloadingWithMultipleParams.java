@@ -1,6 +1,6 @@
 package com.example.corejava;
 
-public class JavaMethodOverloadingWithMultipleParams {
+public class MethodOverloadingWithMultipleParams {
     public static void main(String[] args) {
         //overload(0, 0); //ERROR Ambiguous method call
         overload(0f, 0L);

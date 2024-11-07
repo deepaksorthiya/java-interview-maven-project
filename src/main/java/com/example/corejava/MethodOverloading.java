@@ -1,6 +1,6 @@
 package com.example.corejava;
 
-public class JavaMethodOverloading {
+public class MethodOverloading {
     public static void main(String[] args) {
         //String o = null;
         Object o = null;
