@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit;
 
 public class ExecutorsServiceWithInterrupt {
     public static void main(String[] args) {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-
-        executor.submit(() -> {
-            doWork(1);
-        });
-        stopExecutors(executor);
+        try (ExecutorService executor = Executors.newFixedThreadPool(2)) {
+            executor.submit(() -> {
+                doWork(1);
+            });
+            stopExecutors(executor);
+        }
     }
 
     private static void stopExecutors(ExecutorService executor) {
@@ -31,10 +31,10 @@ public class ExecutorsServiceWithInterrupt {
     }
 
     private static void doWork(int j) {
-        while (!Thread.currentThread().isInterrupted()){
-            String threadName = Thread.currentThread().getName();
+        while (!Thread.currentThread().isInterrupted()) {
+            System.out.println(Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState());
             doSleep();
-            System.out.println("Hello j = " + j + " " + threadName);
+            System.out.println("Hello j = " + j + " " + Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState());
         }
     }
 

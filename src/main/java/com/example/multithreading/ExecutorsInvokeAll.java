@@ -8,32 +8,35 @@ public class ExecutorsInvokeAll {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.currentThread().getName() + " Started");
-        ExecutorService executor = Executors.newFixedThreadPool(3); // Create a fixed thread pool with 3 threads
-        List<Callable<Integer>> callables = new ArrayList<>();
+        // Create a fixed thread pool with 3 threads
+        try (ExecutorService executor = Executors.newFixedThreadPool(3)) {
+            List<Callable<Integer>> callables = new ArrayList<>();
 
-        for (int i = 1; i <= 20; i++) {
-            final Integer num = i;
-            callables.add(() -> {
-                sleep((int) (Math.random() * 1000));
-                System.out.println(Thread.currentThread().getName() + ": " + num);
-                return num;
-            });
-        }
-        try {
-            List<Future<Integer>> results = executor.invokeAll(callables);
-            for (Future<Integer> future : results) {
-                try {
-                    Integer i = future.get();// Wait for task to complete before submitting the next task
-                    System.out.println(Thread.currentThread().getName() + " === " + i);
-                } catch (InterruptedException | ExecutionException e) {
-                    System.out.println("Exception: " + e.getMessage());
-                }
+            for (int i = 1; i <= 20; i++) {
+                final Integer num = i;
+                callables.add(() -> {
+                    int millis = (int) (Math.random() * 1000);
+                    sleep(millis);
+                    System.out.println(Thread.currentThread().getName() + ": " + num + " SLEEPED: " + millis);
+                    return num;
+                });
             }
-            System.out.println(Thread.currentThread().getName() + " Finished");
-        } catch (InterruptedException e) {
-            System.out.println("Exception: " + e.getMessage());
-        } finally {
-            shutdownAndAwaitTermination(executor);
+            try {
+                List<Future<Integer>> results = executor.invokeAll(callables);
+                for (Future<Integer> future : results) {
+                    try {
+                        Integer i = future.get();// Wait for task to complete before submitting the next task
+                        System.out.println(Thread.currentThread().getName() + " === " + i);
+                    } catch (InterruptedException | ExecutionException e) {
+                        System.out.println("Exception: " + e.getMessage());
+                    }
+                }
+                System.out.println(Thread.currentThread().getName() + " Finished");
+            } catch (InterruptedException e) {
+                System.out.println("Exception: " + e.getMessage());
+            } finally {
+                shutdownAndAwaitTermination(executor);
+            }
         }
     }
 

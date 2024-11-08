@@ -28,21 +28,12 @@ public class CountDownLatchDemo {
             latch.await();  //main thread is waiting on CountDownLatch to finish
             System.out.println("All services are up, Application is starting now");
         } catch (InterruptedException ie) {
-            ie.printStackTrace();
+            System.out.println("EXCEPTION: " + ie);
         }
 
     }
 
-    private static class Service implements Runnable {
-        private final String name;
-        private final int timeToStart;
-        private final CountDownLatch latch;
-
-        public Service(String name, int timeToStart, CountDownLatch latch) {
-            this.name = name;
-            this.timeToStart = timeToStart;
-            this.latch = latch;
-        }
+    private record Service(String name, int timeToStart, CountDownLatch latch) implements Runnable {
 
         @Override
         public void run() {
