@@ -2,7 +2,7 @@
 ## Requirements:
 ```
 Maven: 3.9+
-JDK: 22
+JDK: 23
 ```
 
 ### Clone this repository:
