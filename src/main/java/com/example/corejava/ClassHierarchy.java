@@ -3,7 +3,9 @@ package com.example.corejava;
 public class ClassHierarchy {
 
     static class Animal {
-
+        public void name() {
+            System.out.println("Object is ::" + this.getClass().getName());
+        }
     }
 
     static class Dog extends Animal {
@@ -20,6 +22,7 @@ public class ClassHierarchy {
 
     public static void main(String[] args) {
         Animal animal = new Leopard();
+        animal.name();
         printValue(animal);
     }
 
@@ -43,3 +46,9 @@ public class ClassHierarchy {
         System.out.println("String");
     }
 }
+
+/**
+ * OUTPUT -- Comment relevant methods to see diff output
+ * Object is ::com.example.corejava.ClassHierarchy$Leopard
+ * Animal
+ */
