@@ -4,8 +4,11 @@ public class CheckClassType {
 
     public static void main(String[] args) {
         String s = "HELLO";
-        Class<?> sClass = s.getClass();
-        System.out.println(sClass.getClass().getSimpleName());
+        System.out.println(s.getClass().getSimpleName());
+
+        Integer i = 99;
+        System.out.println(i.getClass().getSimpleName());
+
         Tomcat t = new Tomcat();
         System.out.println(t.getClass().getSimpleName());
     }
@@ -18,6 +21,7 @@ public class CheckClassType {
 
 /**
  * OUTPUT::
- * Class
+ * String
+ * Integer
  * Tomcat
  */
