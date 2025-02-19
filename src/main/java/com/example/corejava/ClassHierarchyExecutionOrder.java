@@ -49,3 +49,14 @@ public class ClassHierarchyExecutionOrder {
 
     }
 }
+
+/**
+ * OUTPUT ::
+ * I am parent class static block.
+ * I am child class static block.
+ * I am parent class instance block.
+ * I am parent class constructor.
+ * I am child class instance block.
+ * I am child class constructor.
+ * I am child print()
+ */

@@ -22,6 +22,7 @@ public class ClassHierarchyVariableOverride {
         public void print() {
             System.out.println("I am child print()");
             System.out.println("Child Name :: " + this.name);
+            System.out.println("Parent Name :: " + super.name);
         }
 
         public void childInfo() {
@@ -41,7 +42,15 @@ public class ClassHierarchyVariableOverride {
         Parent p = new Child();
         //p.childInfo(); //error
 
-        //Child child = (Child) new Parent(); //error
+        //Child child1 = (Child) new Parent(); // runtime error
 
     }
 }
+
+/**
+ * OUTPUT ::
+ * I am child print()
+ * Child Name :: John Doe
+ * Parent Name :: PARENT
+ * I am parent parentInfo()PARENT
+ */

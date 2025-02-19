@@ -1,7 +1,6 @@
 package com.example.corejava;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class EnumExample {
     public static void main(String[] args) {
@@ -23,3 +22,10 @@ public class EnumExample {
     }
 
 }
+
+/**
+ * OUTPUT ::
+ * StringA
+ * StringB
+ * StringC
+ */

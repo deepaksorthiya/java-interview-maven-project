@@ -23,6 +23,7 @@ public class ClassPathProperties {
             //return new File(resource.getFile());
 
             File file = new File(resource.toURI());
+            //file object should be directory to list file like config or config/
             System.out.println(Arrays.toString(file.listFiles()));
         }
 
@@ -32,3 +33,9 @@ public class ClassPathProperties {
         System.out.println(properties);
     }
 }
+
+/**
+ * OUTPUT ::
+ * null
+ * {appname=java-interview-maven-project}
+ */

@@ -16,7 +16,8 @@ public class ClassLocalAndInstanceVariableTest {
         }
 
         protected Temp(int x, int y) {
-            System.out.println(x * y);
+            System.out.println("x * y: " + (x * y));
+            System.out.println("this.x * this.y: " + (this.x * this.y));
         }
     }
 
@@ -28,3 +29,11 @@ public class ClassLocalAndInstanceVariableTest {
     }
 
 }
+
+/**
+ * OUTPUT ::
+ * x * y: 75
+ * this.x * this.y: 100
+ * x : 10
+ * y : 5
+ */
