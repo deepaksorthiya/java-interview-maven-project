@@ -1,6 +1,6 @@
 package com.example.corejava;
 
-public class DeepCopyTest {
+public class CloneDeepCopyTest {
     public static void main(String[] args) {
         Department dept1 = new Department("1", "A", "AVP");
         Employee emp1 = new Employee(111, "John", dept1);

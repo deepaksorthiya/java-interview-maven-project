@@ -1,6 +1,6 @@
 package com.example.corejava;
 
-public class ShallowCopyTest {
+public class CloneShallowCopyTest {
 
     public static void main(String[] args) {
 
