@@ -1,3 +1,4 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/deepaksorthiya/java-interview-maven-project/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/deepaksorthiya/java-interview-maven-project/tree/main)
 [![Java CI with Maven](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml)
 
 # Getting Started
