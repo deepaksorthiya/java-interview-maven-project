@@ -17,7 +17,7 @@ public class VirtualThreadSynchronization {
                 for (int i = 0; i < 1000; i++) {
                     final int t = i;
                     e.submit(() -> {
-                        System.out.println(Thread.currentThread().getName() + " TASK: " + t);
+                        System.out.println(Thread.currentThread() + " TASK: " + t);
                         count.getAndIncrement();
                         try {
                             Thread.sleep(4000);
