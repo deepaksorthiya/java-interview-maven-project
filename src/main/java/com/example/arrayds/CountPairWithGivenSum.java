@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Java implementation of simple method to find count of
- * pairs with given sum.. <br>
+ * pairs with given sum. <br>
  * <a href=https://www.geeksforgeeks.org/count-pairs-with-given-sum/>GFG Link</a>
  */
 public class CountPairWithGivenSum {

@@ -3,6 +3,11 @@ package com.example.concurrentds;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Refer below article <br>
+ * <a href=https://rommansabbir.com/understanding-concurrenthashmap-in-kotlinjava>Understanding Concurrenthashmap Link</a> <br>
+ * <a href=https://github.com/openjdk-mirror/jdk7u-jdk/blob/master/src/share/classes/java/util/concurrent/ConcurrentHashMap.java>ConcurrentHashMap Old Source Code Link</a> <br>
+ */
 public class JavaConcurrentHashMap {
     public static void main(String[] args) {
 
