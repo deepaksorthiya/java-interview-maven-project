@@ -52,3 +52,11 @@ public class ArrayListIteratorTest {
         System.out.println(list);
     }
 }
+/**
+ * OUTPUT ::
+ * [one, two, two, three]
+ * one two two three
+ * three two two one
+ * [two, two, three]
+ * [two, two, two, two, three]
+ */

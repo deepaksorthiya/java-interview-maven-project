@@ -1,6 +1,12 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/deepaksorthiya/java-interview-maven-project/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/deepaksorthiya/java-interview-maven-project/tree/main)  
 [![Java CI with Maven](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml)
 
+---
+
+### ** This repository contains java concept's programs, some data structures and algorithms program implementation and Java, Spring, JPA, Microservices references for interviews **
+
+---
+
 # Getting Started
 
 ## Requirements:
@@ -35,4 +41,9 @@ mvn clean test
 
 ## Spring Interview
 
-1. [Best Way to Map ManyToMany](https://vladmihalcea.com/the-best-way-to-use-the-manytomany-annotation-with-jpa-and-hibernate/)
+1. [Map GET request parameters to POJO automatically](https://stackoverflow.com/questions/26612404/spring-map-get-request-parameters-to-pojo-automatically)
+
+## REST Interview
+
+1. [HTTP Methods Safe and Idempotency](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods)
+2. [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status)
