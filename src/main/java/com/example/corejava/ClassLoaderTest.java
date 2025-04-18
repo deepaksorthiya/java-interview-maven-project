@@ -11,6 +11,9 @@ public class ClassLoaderTest {
         System.out.println("class loader for java.util.HashMap: "
                 + java.util.HashMap.class.getClassLoader());
 
+        System.out.println("class loader for java.lang.String: "
+                + java.lang.String.class.getClassLoader());
+
         System.out.println("class loader for java.sql.Connection : "
                 + java.sql.Connection.class.getClassLoader());
 
@@ -34,6 +37,7 @@ public class ClassLoaderTest {
 /**
  * OUTPUT
  * class loader for java.util.HashMap: null
+ * class loader for java.lang.String: null
  * class loader for java.sql.Connection : jdk.internal.loader.ClassLoaders$PlatformClassLoader@1d81eb93
  * class loader for java.net.http.HttpClient : jdk.internal.loader.ClassLoaders$PlatformClassLoader@1d81eb93
  * class loader for this class: jdk.internal.loader.ClassLoaders$AppClassLoader@5a07e868

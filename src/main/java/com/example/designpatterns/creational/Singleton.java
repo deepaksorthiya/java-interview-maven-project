@@ -76,7 +76,7 @@ public class Singleton implements Serializable, Cloneable {
             e.printStackTrace();
         }
         System.out.println("instance1.hashCode():- "
-                + instance1.hashCode());
+                + (instance1 != null ? instance1.hashCode() : "null"));
         System.out.println("instance2.hashCode():- "
                 + (instance2 != null ? instance2.hashCode() : "null"));
         System.out.println("###############Serialization Check End#######################\n");
@@ -104,9 +104,9 @@ public class Singleton implements Serializable, Cloneable {
         Singleton instance1 = Singleton.getInstance();
         Singleton instance2 = null;
         try {
-            Constructor[] constructors
+            Constructor<?>[] constructors
                     = Singleton.class.getDeclaredConstructors();
-            for (Constructor constructor : constructors) {
+            for (Constructor<?> constructor : constructors) {
                 // Below code will destroy the singleton
                 // pattern
                 constructor.setAccessible(true);

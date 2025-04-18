@@ -5,6 +5,14 @@ package com.example.arrayds;
  * <a href=https://www.geeksforgeeks.org/find-the-largest-three-elements-in-an-array/>GFG Link</a>
  */
 public class ThreeLargestDistinctNumber {
+
+    /* Driver program to test above function*/
+    public static void main(String[] args) {
+        int[] arr = {12, 13, 1, 10, 34, 1};
+        int n = arr.length;
+        print3largest(arr, n);
+    }
+
     /* Function to print three largest elements */
     public static void print3largest(int[] arr, int arr_size) {
         int i, first, second, third;
@@ -35,12 +43,5 @@ public class ThreeLargestDistinctNumber {
         }
 
         System.out.println("Three largest elements are " + first + " " + second + " " + third);
-    }
-
-    /* Driver program to test above function*/
-    public static void main(String[] args) {
-        int[] arr = {12, 13, 1, 10, 34, 1};
-        int n = arr.length;
-        print3largest(arr, n);
     }
 }
