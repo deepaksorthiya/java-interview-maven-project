@@ -12,10 +12,11 @@ public class ExecutorServiceWithProperShutDownAndAwaitTermination {
         try (ExecutorService executor = Executors.newFixedThreadPool(3)) {
             try {
                 for (int i = 1; i <= 20; i++) {
+                    int finalI = i;
                     executor.submit(() -> {
                         int millis = (int) (Math.random() * 1000);
                         sleep(millis);
-                        System.out.println(Thread.currentThread() + ": " + " SLEEP: " + millis);
+                        System.out.println(Thread.currentThread() + ": " + " SLEEP: " + millis + "  : Value = " + finalI);
                     });
                 }
             } finally {

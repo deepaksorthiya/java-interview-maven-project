@@ -1,5 +1,7 @@
 package com.example.multithreading;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -7,17 +9,18 @@ import java.util.concurrent.*;
 public class ExecutorsInvokeAll {
 
     public static void main(String[] args) throws InterruptedException {
+        Instant start = Instant.now();
         System.out.println(Thread.currentThread().getName() + " Started");
         // Create a fixed thread pool with 3 threads
         try (ExecutorService executor = Executors.newFixedThreadPool(3)) {
             List<Callable<Integer>> callables = new ArrayList<>();
 
             for (int i = 1; i <= 20; i++) {
-                final Integer num = i;
+                final int num = i;
                 callables.add(() -> {
                     int millis = (int) (Math.random() * 1000);
                     sleep(millis);
-                    System.out.println(Thread.currentThread().getName() + ": " + num + " SLEEPED: " + millis);
+                    System.out.println(Thread.currentThread().getName() + ": " + num + " SLEEP : " + millis);
                     return num;
                 });
             }
@@ -38,6 +41,9 @@ public class ExecutorsInvokeAll {
                 shutdownAndAwaitTermination(executor);
             }
         }
+        Instant end = Instant.now();
+        Duration duration = Duration.between(start, end);
+        System.out.println("Total Duration: " + duration.toMillis() + " ms");
     }
 
     private static void sleep(int millis) {
