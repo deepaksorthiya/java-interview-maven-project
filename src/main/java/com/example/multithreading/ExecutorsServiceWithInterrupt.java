@@ -7,43 +7,53 @@ import java.util.concurrent.TimeUnit;
 public class ExecutorsServiceWithInterrupt {
     public static void main(String[] args) {
         try (ExecutorService executor = Executors.newFixedThreadPool(2)) {
-            executor.submit(() -> {
-                doWork(1);
-            });
-            stopExecutors(executor);
-        }
-    }
-
-    private static void stopExecutors(ExecutorService executor) {
-        try {
-            System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            executor.awaitTermination(10, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            System.err.println("tasks interrupted");
-        } finally {
-            if (!executor.isTerminated()) {
-                System.err.println("cancel non-finished tasks");
+            for (int i = 0; i < 10; i++) {
+                int finalI = i;
+                executor.submit(() -> {
+                    try {
+                        doWork(finalI);
+                    } catch (InterruptedException e) {
+                        System.out.println(Thread.currentThread().getName() + " Interrupted");
+                        //throw new RuntimeException(e);
+                    }
+                });
             }
-            executor.shutdownNow();
-            System.out.println("shutdown finished");
+            shutdownAndAwaitTermination(executor);
         }
     }
 
-    private static void doWork(int j) {
-        while (!Thread.currentThread().isInterrupted()) {
-            System.out.println(Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState());
-            doSleep();
-            System.out.println("Hello j = " + j + " " + Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState());
-        }
-    }
-
-    private static void doSleep() {
+    public static void shutdownAndAwaitTermination(ExecutorService pool) {
+        System.out.println("attempt to shutdown executor");
+        pool.shutdown(); // Disable new tasks from being submitted
         try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            System.out.println(Thread.currentThread().getName() + " Interrupted");
+            // Wait a while for existing tasks to terminate
+            if (!pool.awaitTermination(7, TimeUnit.SECONDS)) {
+                pool.shutdownNow(); // Cancel currently executing tasks
+                // Wait a while for tasks to respond to being cancelled
+                if (!pool.awaitTermination(7, TimeUnit.SECONDS))
+                    System.err.println("Pool did not terminate");
+            }
+        } catch (InterruptedException ex) {
+            // (Re-)Cancel if current thread also interrupted
+            pool.shutdownNow();
+            // Preserve interrupt status
             Thread.currentThread().interrupt();
         }
+    }
+
+    private static void doWork(int i) throws InterruptedException {
+        while (!Thread.currentThread().isInterrupted()) {
+            System.out.println(Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState()+ " Value : " + i);
+            doSleep();
+        }
+    }
+
+    private static void doSleep() throws InterruptedException {
+        //try {
+        Thread.sleep(1000);
+        //} catch (InterruptedException e) {
+        //System.out.println(Thread.currentThread().getName() + " Interrupted");
+        //Thread.currentThread().interrupt();
+        //}
     }
 }

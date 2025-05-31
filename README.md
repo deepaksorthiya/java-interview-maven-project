@@ -13,7 +13,7 @@
 
 ```
 Maven: 3.9+
-JDK: 23
+JDK: 24
 ```
 
 ### Clone this repository:
