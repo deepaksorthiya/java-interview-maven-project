@@ -7,9 +7,9 @@ public class BigIntegerImmutability {
     public static void main(String[] args) {
 
         BigInteger bigInteger = BigInteger.TEN;
-        System.out.println(bigInteger);
+        System.out.println("Before: " + bigInteger);
         change(bigInteger);
-        System.out.println(bigInteger);
+        System.out.println("After: " + bigInteger);
     }
 
     public static void change(BigInteger integer) {
@@ -20,6 +20,6 @@ public class BigIntegerImmutability {
 
 /**
  * OUTPUT ::
- * 10
- * 10
+ * Before: 10
+ * After: 10
  */

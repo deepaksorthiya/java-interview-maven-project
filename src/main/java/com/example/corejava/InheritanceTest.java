@@ -12,12 +12,18 @@ public class InheritanceTest {
     }
 
     private static class Tiger {
+        //                public String callMethod(Object obj) {
+//            return "Object";
+//        }
         public String callMethod(Tiger obj) {
             return "Tiger";
         }
     }
 
     private static class White extends Tiger {
+        //        public String callMethod(Object obj) {
+//            return "Object";
+//        }
         public String callMethod(White obj) {
             return "White";
         }
