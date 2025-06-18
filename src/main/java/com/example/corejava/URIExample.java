@@ -11,9 +11,16 @@ public class URIExample {
         String query = uri.getQuery();
         String fragment = uri.getFragment();
 
-        System.out.println(host);
-        System.out.println(path);
-        System.out.println(query);
-        System.out.println(fragment);
+        System.out.println("Host: " + host);
+        System.out.println("Path: " + path);
+        System.out.println("Query: " + query);
+        System.out.println("Fragment: " + fragment);
     }
 }
+/**
+ * OUTPUT ::
+ * Host: mail.google.com
+ * Path: /mail/u/0/
+ * Query: p=p&&p2=p2
+ * Fragment: inbox/FMfcgzGxSRQsjBCGglVxjbtXBtfQbWJJ
+ */

@@ -24,4 +24,7 @@ public class SwitchCaseStatement {
         System.out.println(s);
     }
 }
-//output 100205040
+/**
+ * OUTPUT ::
+ * 100205040
+ */
