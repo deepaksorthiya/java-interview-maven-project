@@ -2,7 +2,7 @@ package com.example.arrayds;
 
 /**
  * Java Program to Count Number Of Rotation of Sorted and Rotated Array
- * <a href="https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/">GFG Link</a>
  */
 public class NumberOfRotationsInSortedRotatedArray {
 

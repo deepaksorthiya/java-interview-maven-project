@@ -2,7 +2,7 @@ package com.example.arrayds;
 
 /**
  * Java program to merge two sorted arrays
- * <a href="https://www.geeksforgeeks.org/merge-two-sorted-arrays/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/merge-two-sorted-arrays/">GFG Link</a>
  */
 public class MergeTwoSorted {
     // Merge arr1[0..n1-1] and arr2[0..n2-1]

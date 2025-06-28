@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Move all zeros to end of array <br>
- * <a href="https://www.geeksforgeeks.org/move-zeroes-end-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/move-zeroes-end-array/">GFG Link</a>
  */
 public class MoveAllZerosToEnd {
 

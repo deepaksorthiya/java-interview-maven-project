@@ -2,7 +2,7 @@ package com.example.linkedlist;
 
 /**
  * Java Program for the deleting a node from end <br>
- * <a href="https://www.geeksforgeeks.org/delete-nth-node-from-the-end-of-the-given-linked-list/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/delete-nth-node-from-the-end-of-the-given-linked-list/">GFG Link</a>
  */
 public class DeleteNthNodeFromEnd {
 

@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Prefix Sum Array – Implementation and Applications in Competitive Programming <br>
- * <a href="https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/">GFG Link</a>
  */
 public class PrefixSumArray {
 

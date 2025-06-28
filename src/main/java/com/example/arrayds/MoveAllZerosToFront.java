@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Move all zeros to front of array <br>
- * <a href="https://www.geeksforgeeks.org/move-all-zeros-to-front-of-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/move-all-zeros-to-front-of-array/">GFG Link</a>
  */
 public class MoveAllZerosToFront {
 

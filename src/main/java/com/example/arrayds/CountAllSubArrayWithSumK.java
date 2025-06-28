@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * Java Program to Count Subarrays having Sum K <br>
- * <a href="https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/">GFG Link</a>
  */
 public class CountAllSubArrayWithSumK {
 

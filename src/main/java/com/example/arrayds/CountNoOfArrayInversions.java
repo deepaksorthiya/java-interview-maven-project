@@ -3,7 +3,7 @@ package com.example.arrayds;
 
 /**
  * Java Program to Count Number Of Inversions
- * <a href="https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/inversion-count-in-array-using-merge-sort/">GFG Link</a>
  */
 public class CountNoOfArrayInversions {
 

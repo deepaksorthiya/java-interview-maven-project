@@ -2,7 +2,7 @@ package com.example.sortingalgos;
 
 /**
  * Java Program to Count Sort <br>
- * <a href="https://www.geeksforgeeks.org/counting-sort/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/counting-sort/">GFG Link</a>
  */
 public class CountingSortAlgo {
 

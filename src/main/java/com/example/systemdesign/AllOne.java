@@ -49,7 +49,7 @@ public class AllOne {
     }
 
     /**
-     * Inserts a new key <Key> with value 1. Or increments an existing key by 1.
+     * Inserts a new key with value 1. Or increments an existing key by 1.
      */
     public void inc(String key) {
         if (!map.containsKey(key)) {

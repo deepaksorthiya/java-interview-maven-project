@@ -2,7 +2,7 @@ package com.example.arrayds;
 
 /**
  * Java Program to Find Minimum and Maximum Element in array
- * <a href="https://www.geeksforgeeks.org/program-find-minimum-maximum-element-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/program-find-minimum-maximum-element-array/">GFG Link</a>
  */
 public class ArrayMinMax {
     public static void main(String[] args) {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Bubble Sort <br>
- * <a href="https://www.geeksforgeeks.org/bubble-sort-algorithm/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/bubble-sort-algorithm/">GFG Link</a>
  */
 public class BubbleSortAlgo {
 

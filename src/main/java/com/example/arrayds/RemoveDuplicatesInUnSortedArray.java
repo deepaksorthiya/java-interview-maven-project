@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 
 /**
  * Java Program to Remove duplicates from unsorted array using Set data structure <br>
- * <a href="https://www.geeksforgeeks.org/remove-duplicates-from-unsorted-array-using-set-data-structure/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/remove-duplicates-from-unsorted-array-using-set-data-structure/">GFG Link</a>
  */
 public class RemoveDuplicatesInUnSortedArray {
 

@@ -5,7 +5,7 @@ import java.util.*;
 
 /**
  * Java program for implementation of External Sort
- * <a href="https://www.geeksforgeeks.org/external-sorting//">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/external-sorting//">GFG Link</a>
  */
 public class ExternalSort {
 

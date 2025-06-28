@@ -2,7 +2,7 @@ package com.example.sortingalgos;
 
 /**
  * Java program for Merge Sort
- * <a href="https://www.geeksforgeeks.org/merge-sort/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/merge-sort/">GFG Link</a>
  */
 public class MergeSortAlgo {
 

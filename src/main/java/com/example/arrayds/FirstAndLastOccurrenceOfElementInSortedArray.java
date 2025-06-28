@@ -2,7 +2,7 @@ package com.example.arrayds;
 
 /**
  * Java Program to Find first and last positions of an element in a sorted array
- * <a href="https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/">GFG Link</a>
  */
 public class FirstAndLastOccurrenceOfElementInSortedArray {
     public static void main(String[] args) {

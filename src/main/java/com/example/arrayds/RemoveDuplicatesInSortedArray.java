@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Remove duplicates from sorted array <br>
- * <a href="https://www.geeksforgeeks.org/remove-duplicates-sorted-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/remove-duplicates-sorted-array/">GFG Link</a>
  */
 public class RemoveDuplicatesInSortedArray {
 

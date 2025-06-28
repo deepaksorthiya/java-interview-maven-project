@@ -2,7 +2,7 @@ package com.example.sortingalgos;
 
 /**
  * Java program for implementation of Heap Sort
- * <a href="https://www.geeksforgeeks.org/heap-sort/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/heap-sort/">GFG Link</a>
  */
 public class HeapSort {
     public void sort(int[] arr) {

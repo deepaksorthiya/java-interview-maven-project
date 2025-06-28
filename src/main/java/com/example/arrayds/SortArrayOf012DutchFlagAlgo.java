@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Java Program to Sort an array of 0s, 1s and 2s | Dutch National Flag problem <br>
- * <a href="https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/">GFG Link</a>
  */
 public class SortArrayOf012DutchFlagAlgo {
 

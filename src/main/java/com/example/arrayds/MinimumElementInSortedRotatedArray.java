@@ -2,7 +2,7 @@ package com.example.arrayds;
 
 /**
  * Java Program to Find Minimum element in sorted and rotated array <br>
- * <a href="https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/">GFG Link</a>
  */
 public class MinimumElementInSortedRotatedArray {
     public static void main(String[] args) {

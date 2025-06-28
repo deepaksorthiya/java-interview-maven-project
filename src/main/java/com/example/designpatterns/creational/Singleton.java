@@ -8,7 +8,7 @@ import java.lang.reflect.InaccessibleObjectException;
  * Java implementation of singleton design pattern.
  * this is thread safe double lock checking lazy initialization also it
  * prevent breaking from clone, reflection and serialization <br>
- * <a href="https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/">GFG Link</a> </a>
+ * <a href="https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/">GFG Link</a>
  */
 public class Singleton implements Serializable, Cloneable {
 
