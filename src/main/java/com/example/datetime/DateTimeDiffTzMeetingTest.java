@@ -1,4 +1,4 @@
-package com.example.corejava;
+package com.example.datetime;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -22,7 +22,8 @@ public class DateTimeDiffTzMeetingTest {
         // Mohamed's time zone
         ZoneId mohamedZone = ZoneId.of("Europe/Belgrade");
 
-        // Creating the meeting
+        // Creating the meeting - On Hosted Server With Server TimeZone - In IDE it will be your machine TZ or can be
+        // override using Vm Opts to -Duser.timezone=Asia/Kolkata
         ZonedDateTime parsed = LocalDateTime.parse(mohamedTime, formatter)
                 .atZone(mohamedZone);
 
