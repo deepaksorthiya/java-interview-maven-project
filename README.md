@@ -8,6 +8,11 @@
     <img src="https://dl.circleci.com/status-badge/img/gh/deepaksorthiya/java-interview-maven-project/tree/main.svg?style=svg" alt="CircleCI"/>
   </a>
 </p>
+<p style="text-align: center;">
+  <a href="https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=774786801&skip_quickstart=true&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json">
+    <img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces"/>
+  </a>
+</p>
 
 ---
 
