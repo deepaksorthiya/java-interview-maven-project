@@ -12,7 +12,7 @@ public class DateTimeDiffTzMeetingTest {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     /*
-      1. Mohamed (in the "Europe/Belgrade" time zone)
+      1. Mohamed (in the "Europe/Belgrade" time zone) [UTC/GMT +2 hours]
      is creating a meeting slot with Duke in San Francisco.
     */
 
@@ -24,6 +24,7 @@ public class DateTimeDiffTzMeetingTest {
 
         // Creating the meeting - On Hosted Server With Server TimeZone - In IDE it will be your machine TZ or can be
         // override using Vm Opts to -Duser.timezone=Asia/Kolkata
+        // server logic will parse this date from server TZ to user TZ
         ZonedDateTime parsed = LocalDateTime.parse(mohamedTime, formatter)
                 .atZone(mohamedZone);
 
@@ -38,7 +39,7 @@ public class DateTimeDiffTzMeetingTest {
         // will print: 2022-07-10T08:30:00Z
 
     /*
-      Duke (in the "US/San Francisco" time zone) is viewing the meeting
+      Duke (in the "US/San Francisco" time zone) [UTC/GMT -7 hours] is viewing the meeting
   DateTime Mohamed has booked to determine when exactly the meeting is.
     */
 
