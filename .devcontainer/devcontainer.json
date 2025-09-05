@@ -7,7 +7,7 @@
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "jdkDistro": "oracle",
-      "version": "24",
+      "version": "25",
       "installMaven": true,
       "mavenVersion": "3.9.11"
     }

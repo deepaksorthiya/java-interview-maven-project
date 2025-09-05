@@ -13,13 +13,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>24</java.version>
-        <maven.surefire.plugin>3.5.3</maven.surefire.plugin>
-        <maven.compiler.plugin>3.14.0</maven.compiler.plugin>
+        <java.version>25</java.version>
+        <maven.surefire.plugin>3.5.4</maven.surefire.plugin>
+        <maven.compiler.plugin>3.14.1</maven.compiler.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
-        <junit-bom.version>5.13.4</junit-bom.version>
-        <lombok.version>1.18.38</lombok.version>
-        <logback.version>1.5.18</logback.version>
+        <junit-bom.version>6.0.0</junit-bom.version>
+        <lombok.version>1.18.42</lombok.version>
+        <logback.version>1.5.20</logback.version>
     </properties>
 
     <dependencyManagement>
@@ -66,7 +66,7 @@
                     <release>${java.version}</release>
                     <target>${java.version}</target>
                     <compilerArgs>
-                        <!-- for scope value in jdk 24 -->
+                        <!-- for StructuredTaskScope in jdk 25 -->
                         <compilerArg>--enable-preview</compilerArg>
                     </compilerArgs>
                     <annotationProcessorPaths>

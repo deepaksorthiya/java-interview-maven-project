@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * All 5,000 tasks completed.
  * Total execution time: 31.791 seconds
  * ----------------------------------------
- * Running with Java version: 24
+ * Running with Java version: 24+
  * Launching 5,000 virtual threads...
  * Each thread does CPU work (10,000 iterations), then acquires lock and blocks for 5 ms.
  * All 5,000 tasks completed.

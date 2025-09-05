@@ -16,7 +16,7 @@ public class ScopeValueExample {
 //                insideParentThread();
 //            }).start();
 
-            try (var scope = new StructuredTaskScope<String>()) {
+            try (var scope = StructuredTaskScope.open()) {
 
                 var r1 = scope.fork(() -> insideChildThread1());
                 var r2 = scope.fork(() -> insideChildThread2());
