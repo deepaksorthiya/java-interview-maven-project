@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>24</java.version>
+        <java.version>25</java.version>
         <maven.surefire.plugin>3.5.4</maven.surefire.plugin>
         <maven.compiler.plugin>3.14.0</maven.compiler.plugin>
         <maven.source.plugin>3.3.1</maven.source.plugin>
@@ -66,7 +66,7 @@
                     <release>${java.version}</release>
                     <target>${java.version}</target>
                     <compilerArgs>
-                        <!-- for scope value in jdk 24 -->
+                        <!-- for scope value in jdk 25 -->
                         <compilerArg>--enable-preview</compilerArg>
                     </compilerArgs>
                     <annotationProcessorPaths>
