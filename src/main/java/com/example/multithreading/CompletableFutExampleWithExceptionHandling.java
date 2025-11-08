@@ -36,6 +36,11 @@ public class CompletableFutExampleWithExceptionHandling {
                     }
                     return v;
                 })
+                // catch exception and return zero
+//                .exceptionallyAsync(throwable -> {
+//                    System.out.println(Thread.currentThread().getName() + " FAILED." + " :: Exception : " + throwable.getMessage());
+//                    return 0;
+//                })
                 .handleAsync((value, exception) -> {
                     System.out.println("Value: " + value + " Exception: " + exception);
                     System.out.println(Thread.currentThread().getName() + " FINISHED.");

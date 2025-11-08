@@ -17,6 +17,9 @@ public class MapSortByKey {
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (oldValue, _) -> oldValue, LinkedHashMap::new));
+
+//        TreeMap<String, Integer> sortedMap = new TreeMap<>(Collections.reverseOrder());
+//        sortedMap.putAll(unsortedMap);
         printMap(sortedMap);
     }
 

@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 public class ExecutorsServiceWithInterrupt {
     public static void main(String[] args) {
-        try (ExecutorService executor = Executors.newFixedThreadPool(2)) {
-            for (int i = 0; i < 10; i++) {
+        long start = System.currentTimeMillis();
+        System.out.println(Thread.currentThread().getName() + " started");
+        try (ExecutorService executor = Executors.newFixedThreadPool(5)) {
+            for (int i = 1; i <= 10; i++) {
                 int finalI = i;
                 executor.submit(() -> {
                     try {
@@ -20,6 +22,9 @@ public class ExecutorsServiceWithInterrupt {
             }
             shutdownAndAwaitTermination(executor);
         }
+        System.out.println(Thread.currentThread().getName() + " finished");
+        long end = System.currentTimeMillis();
+        System.out.println("Total time : " + (end - start));
     }
 
     public static void shutdownAndAwaitTermination(ExecutorService pool) {
@@ -43,7 +48,7 @@ public class ExecutorsServiceWithInterrupt {
 
     private static void doWork(int i) throws InterruptedException {
         while (!Thread.currentThread().isInterrupted()) {
-            System.out.println(Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState()+ " Value : " + i);
+            System.out.println(Thread.currentThread().getName() + " : State : " + Thread.currentThread().getState() + " Value : " + i);
             doSleep();
         }
     }

@@ -36,6 +36,12 @@ public class ArrayListGrowCapacityTest {
         list.add(23); // 33
         list.add(24);
 
+        int index = 9;
+        Integer object = 9;
+
+        list.remove(object); // remove given object
+        list.remove(index); // remove element at index
+
         System.out.println(list);
     }
 }
