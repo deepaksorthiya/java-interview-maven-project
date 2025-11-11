@@ -21,6 +21,7 @@ public class ExecutorServiceWithProperShutDownAndAwaitTermination {
                 }
             } finally {
                 shutdownAndAwaitTermination(executor);
+                System.out.println("Executors Pool Shutdown :: " + executor.isShutdown());
             }
         }
         System.out.println(Thread.currentThread().getName() + " Finished");

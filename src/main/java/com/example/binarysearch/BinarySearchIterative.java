@@ -12,14 +12,16 @@ public class BinarySearchIterative {
     public static void main(String[] args) {
         BinarySearchIterative ob = new BinarySearchIterative();
         int[] arr = {2, 3, 4, 10, 40};
+        //int[] arr = {2, 3, 4, 10, 40, 12};
         int x = 10;
+        //int x = 11;
         int result = ob.binarySearch(arr, x);
         if (result == -1)
             System.out.println(
                     "Element is not present in array");
         else
             System.out.println("Element is present at "
-                    + "index " + result);
+                               + "index " + result);
     }
 
     // Returns index of x if it is present in arr[].
@@ -34,11 +36,11 @@ public class BinarySearchIterative {
                 return m;
             }
 
-            // If x greater, ignore left half
+            // If x greater than middle element ignore left half
             if (arr[m] < x) {
                 l = m + 1;
             }
-            // If x is smaller, ignore right half
+            // If x is smaller than middle element ignore right half
             else {
                 r = m - 1;
             }

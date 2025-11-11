@@ -38,12 +38,14 @@ public class CountDownLatchDemo {
         @Override
         public void run() {
             try {
+                System.out.println(name + " is Starting");
                 Thread.sleep(timeToStart);
+                System.out.println(name + " is Up");
             } catch (InterruptedException ex) {
 
+            } finally {
+                latch.countDown(); //reduce count of CountDownLatch by 1
             }
-            System.out.println(name + " is Up");
-            latch.countDown(); //reduce count of CountDownLatch by 1
         }
 
     }
