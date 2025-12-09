@@ -14,11 +14,12 @@ public class MaximumSubArraySumKadaneAlgo {
         //int[] arr = {1, 5, -3};
         //int[] arr = {1, -5, -3};
         //int[] arr = {4, -1, -2, 1, 5};
-        findMaxSum(arr, arr.length);
+        findMaxSumWithIndexes(arr, arr.length);
+        //System.out.println(findMaxSum(arr, arr.length));
 
     }
 
-    public static void findMaxSum(int[] arr, int length) {
+    public static void findMaxSumWithIndexes(int[] arr, int length) {
         // Initialize currMax and globalMax
         // with first value of nums
         int currMax = arr[0], globalMax = arr[0];
@@ -58,6 +59,15 @@ public class MaximumSubArraySumKadaneAlgo {
         System.out.println("Maximum Sub Array Sum : " + globalMax);
         System.out.println("Start  Index: " + globalMaxStartIndex);
         System.out.println("End Index  : " + endIndex);
+    }
+
+    public static int findMaxSum(int[] arr, int length) {
+        int currMax = arr[0], globalMax = arr[0];
+        for (int i = 1; i < length; ++i) {
+            currMax = Math.max(arr[i], arr[i] + currMax);
+            globalMax = Math.max(globalMax, currMax);
+        }
+        return globalMax;
     }
 }
 

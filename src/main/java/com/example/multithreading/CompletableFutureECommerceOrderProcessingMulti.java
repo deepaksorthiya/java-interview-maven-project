@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class CompletableFutureECommerceOrderProcessingMilti {
+public class CompletableFutureECommerceOrderProcessingMulti {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName() + " Started");
         ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();

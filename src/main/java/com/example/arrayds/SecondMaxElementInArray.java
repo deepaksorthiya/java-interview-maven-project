@@ -36,16 +36,18 @@ public class SecondMaxElementInArray {
 
             /* If arr[i] is in between first and
                second then update second  */
-            else if (arr[i] > second && arr[i] != first)
+            else if (arr[i] > second && arr[i] != first) {
                 second = arr[i];
+            }
         }
 
-        if (second == Integer.MIN_VALUE)
+        if (second == Integer.MIN_VALUE) {
             System.out.println("There is no second largest"
-                    + " element\n");
-        else
+                               + " element");
+        } else {
             System.out.println("The second largest element"
-                    + " is " + second);
+                               + " is " + second);
+        }
     }
 }
 

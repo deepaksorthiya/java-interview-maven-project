@@ -38,7 +38,7 @@ public class PrefixSumArray {
      * @return sum
      */
     public static int findSumBetweenIndexes(int[] arr2, int i, int j) {
-        return arr2[j] - arr2[i - 1];
+        return arr2[j] - (i == 0 ? 0 : arr2[i - 1]);
     }
 
     // Function to find the prefix sum array
