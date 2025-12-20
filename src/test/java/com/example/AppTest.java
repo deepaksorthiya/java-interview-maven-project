@@ -9,16 +9,19 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
 
     @Test
+    void assertEqualsArray() {
+        assertArrayEquals(new int[]{1, 2, 3}, new int[]{1, 2, 3});
+    }
+
+    @Test
     @DisplayName("1 + 1 = 2")
     void addsTwoNumbers() {
-
         assertEquals(2, 2, "1 + 1 should equal 2");
     }
 
     @Test
     @DisplayName("1 - 1 = 0")
     void subtractsTwoNumbers() {
-
         assertEquals(0, 0, "1 - 1 should equal 0");
         assertThrows(ArithmeticException.class, () -> {
             int i = 1 / 0;

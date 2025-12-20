@@ -5,6 +5,9 @@ import java.util.*;
 
 public class Trie {
 
+    // root node
+    private TrieNode root = new TrieNode();
+
     public static void main(String[] args) {
         Trie trie = new Trie();
         String[] words = {"apple", "app", "application", "bat", "batman", "batmobile"};
@@ -41,8 +44,6 @@ public class Trie {
         boolean isEndOfWord = false;
         int frequency = 0; // Track the frequency of words
     }
-
-    private TrieNode root = new TrieNode();
 
     // Insert a word into the Trie
     public void insert(String word) {

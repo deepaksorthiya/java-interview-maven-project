@@ -3,7 +3,15 @@ package com.example.designpatterns.creational;
 public class BuilderDesignPattern02 {
 
     public static void main(String[] args) {
-        Customer customer = new CustomerBuilder()
+
+//        Customer customer = new CustomerBuilder()
+//                .firstName("Tony")
+//                .lastName("Stark")
+//                .primaryEmail("tonystark@abc.com")
+//                .primaryMobileNumber("1234567890")
+//                .build();
+
+        Customer customer = Customer.builder()
                 .firstName("Tony")
                 .lastName("Stark")
                 .primaryEmail("tonystark@abc.com")
@@ -30,6 +38,12 @@ public class BuilderDesignPattern02 {
             this.secondaryEmail = customerBuilder.getSecondaryEmail();
             this.primaryMobileNumber = customerBuilder.getPrimaryMobileNumber();
             this.secondaryMobileNumber = customerBuilder.getSecondaryMobileNumber();
+        }
+
+        // --- NEW: Static Factory Method ---
+        // This allows you to call Customer.builder() instead of new Customer.CustomerBuilder()
+        public static CustomerBuilder builder() {
+            return new CustomerBuilder();
         }
 
         public String getFirstName() {
