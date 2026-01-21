@@ -19,7 +19,7 @@ public class MaximumSubArraySumBruteForce {
     }
 
     public static void findMaxSum(int[] arr, int length) {
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int startIndex = -1;
         int endIndex = -1;
         for (int i = 0; i < arr.length; i++) {

@@ -1,5 +1,7 @@
 package com.example.corejava;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 public class OptionalClassTest {
@@ -10,6 +12,14 @@ public class OptionalClassTest {
         Optional<String> optional = Optional.ofNullable(s);
         String s1 = optional.orElse("DULL");
         System.out.println(s1);
+
+        List<Integer> list = List.of(1, 2, 3);
+        Integer sum = Optional
+                .ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .reduce(0, Integer::sum);
+        System.out.println(sum);
 
     }
 }
