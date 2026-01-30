@@ -9,7 +9,7 @@
       "jdkDistro": "oracle",
       "version": "25",
       "installMaven": true,
-      "mavenVersion": "3.9.11"
+      "mavenVersion": "3.9.12"
     }
   },
   // Use 'postCreateCommand' to run commands after the container is created.

@@ -1,12 +1,15 @@
 <h1 style="text-align: center;">Java Interview Preparation</h1>
 
 <p style="text-align: center;">
-  <a href="https://github.com/deepaksorthiya/java-interview-maven-project/workflows/maven-build.yml">
-    <img src="https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml/badge.svg" alt="Java Maven Build Test"/>
-  </a>
-  <a href="https://dl.circleci.com/status-badge/redirect/gh/deepaksorthiya/java-interview-maven-project/tree/main">
-    <img src="https://dl.circleci.com/status-badge/img/gh/deepaksorthiya/java-interview-maven-project/tree/main.svg?style=svg" alt="CircleCI"/>
-  </a>
+   <a href="https://github.com/deepaksorthiya/java-interview-maven-project/workflows/maven-build.yml">
+    <img src="https://img.shields.io/badge/Java-25-%2325c2a0?style=for-the-badge" alt="JDK Version"/>
+   </a>
+   <a href="https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/deepaksorthiya/java-interview-maven-project/maven-build.yml?style=for-the-badge&label=JVM%20Maven%20Build" alt="JVM Maven Build"/>
+   </a>
+   <a href="https://dl.circleci.com/status-badge/redirect/gh/deepaksorthiya/java-interview-maven-project/tree/main">
+    <img src="https://img.shields.io/circleci/build/gh/deepaksorthiya/java-interview-maven-project?style=for-the-badge&label=Circle%20CI%20Build" alt="CircleCI"/>
+   </a>
 </p>
 <p style="text-align: center;">
   <a href="https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=774786801&skip_quickstart=true&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json">
