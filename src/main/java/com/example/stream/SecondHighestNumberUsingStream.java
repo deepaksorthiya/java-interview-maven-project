@@ -3,7 +3,7 @@ package com.example.stream;
 import java.util.*;
 
 /**
- *
+ * java program to find the second-highest number in a list using Java Streams.
  */
 public class SecondHighestNumberUsingStream {
 
@@ -16,13 +16,13 @@ public class SecondHighestNumberUsingStream {
 
     public static Integer findSecondHighest(List<Integer> list) {
         return Optional.ofNullable(list)      // 1. Handle null list
-                .orElse(Collections.emptyList())
+                .orElseGet(Collections::emptyList) // return empty list if null
                 .stream()
                 .filter(Objects::nonNull)        // 2. Handle null elements inside list
                 .distinct()                      // 3. Handle duplicates
                 .sorted(Comparator.reverseOrder())
                 .skip(1)                         // 4. Move to second position
                 .findFirst()                     // 5. Return Optional
-                .orElse(null);                   // 6. Return null if < 2 unique elements
+                .orElseGet(() -> null);                   // 6. Return null if < 2 unique elements
     }
 }
