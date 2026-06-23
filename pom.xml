@@ -19,7 +19,7 @@
         <maven.source.plugin>3.4.0</maven.source.plugin>
         <junit-bom.version>6.1.0</junit-bom.version>
         <lombok.version>1.18.46</lombok.version>
-        <logback.version>1.5.33</logback.version>
+        <logback.version>1.5.35</logback.version>
     </properties>
 
     <dependencyManagement>
