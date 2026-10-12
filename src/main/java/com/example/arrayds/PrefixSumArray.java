@@ -30,7 +30,7 @@ public class PrefixSumArray {
     }
 
     /**
-     * To find the sum of the subarray from index i to j
+     * To find the sum of the subarray from zero based index i to j
      *
      * @param arr2 input array
      * @param i    starting index

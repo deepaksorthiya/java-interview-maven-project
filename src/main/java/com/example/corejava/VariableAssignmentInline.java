@@ -11,6 +11,8 @@ public class VariableAssignmentInline {
             System.out.println("a = " + a);
             System.out.println("sum = " + (a + b));
         }
+        System.out.println("a = " + a);
+        System.out.println("b  = " + b);
     }
 }
 /**
