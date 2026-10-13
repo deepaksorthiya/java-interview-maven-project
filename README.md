@@ -2,13 +2,10 @@
 
 <p style="text-align: center;">
    <a href="https://github.com/deepaksorthiya/java-interview-maven-project/workflows/maven-build.yml">
-    <img src="https://img.shields.io/badge/Java-25-%2325c2a0?style=for-the-badge" alt="JDK Version"/>
+    <img src="https://img.shields.io/badge/Java-27-%2325c2a0?style=for-the-badge" alt="JDK Version"/>
    </a>
    <a href="https://github.com/deepaksorthiya/java-interview-maven-project/actions/workflows/maven-build.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/deepaksorthiya/java-interview-maven-project/maven-build.yml?style=for-the-badge&label=JVM%20Maven%20Build" alt="JVM Maven Build"/>
-   </a>
-   <a href="https://dl.circleci.com/status-badge/redirect/gh/deepaksorthiya/java-interview-maven-project/tree/main">
-    <img src="https://img.shields.io/circleci/build/gh/deepaksorthiya/java-interview-maven-project?style=for-the-badge&label=Circle%20CI%20Build" alt="CircleCI"/>
    </a>
 </p>
 <p style="text-align: center;">
@@ -28,8 +25,8 @@
 ## Requirements:
 
 ```
-Maven: 3.9+
-JDK: 25
+Maven: 3.10+
+JDK: 27
 ```
 
 ### Clone this repository:
@@ -42,7 +39,7 @@ git clone https://github.com/deepaksorthiya/java-interview-maven-project.git
 cd java-interview-maven-project
 ```
 
-### Run Test(Maven Should Be Installed):
+### Run Test (Maven Should Be Installed):
 
 ```bash
 mvn clean test
