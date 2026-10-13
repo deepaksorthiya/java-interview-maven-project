@@ -1,5 +1,6 @@
 package com.example.multithreading;
 
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.StructuredTaskScope;
 
 /**
@@ -9,7 +10,7 @@ public class ScopeValueExample {
 
     private static final ScopedValue<String> CONTEXT = ScopedValue.newInstance();
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ScopedValue.where(CONTEXT, "DUKE").call(() -> {
 
 //            new Thread(() -> {
